@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+/* ////////////// topo da pagina //////////////*/
+header{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+.logo{
+    margin-left: 22px;
+}
+.profile{
+    margin-right: 22px;
+    font-size: 42px;
+}
+.hidden{
+    display: none;
+}
+
+
+/*////////////// configurações da página //////////////*/
+aside{
+    position: absolute;
+    width: 70%;
+    height: 100vh;
+    background-color: rgb(180, 246, 255);
+    right: 0;
+    z-index: 1;
+}
+.side-bar-title{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    text-align: center;
+}
+.users{
+    height: 108px;
+}
+.name-users{
+    display: flex;
+    height: 36px;
+    margin-left: 20px;
+}
+.name-users p{
+    margin-left: 8px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+}
+.info-visibility{
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+}
+.icon-bar{
+    font-size: 26px;
+}
+
+
+/*//////////////rodapé da página //////////////*/
+footer{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    border: 2px solid black;
+}
+.send{
+    font-size: 26px;
+    margin-right: 22px;
+}
+input{
+    margin-left: 22px;
+    /* border: 0px; */
+    width: 85%;
+    height: 80%;
+}
