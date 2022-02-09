@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,18 @@
     <title>Bate Papo UOL</title>
 </head>
 <body>
-    <header>
+    <section>
+        <div class="logo-login">
+            <img src="./assets/logo 1.png" alt="logo-uol">
+        </div>
+        <div class="input-login">
+            <input type="text" placeholder="Digite o seu nome">
+        </div>
+        <div class="button-login">
+            <button onclick="functionWaiter()">Entrar</button>
+        </div>
+    </section>
+    <header class="hidden">
         <img class="logo" src="./assets/logo 1.png" alt="logo-uol">
         <ion-icon class="profile" name="people-outline"></ion-icon>
     </header>
@@ -35,14 +46,29 @@
         </div>
     </aside>
     <main>
-
+        <!-- <section class="area login">
+            <p>(09:21:45) joao entrou na sala</p>
+        </section>
+        <section class="area pvt">
+            <p>(09:21:45) joao reservadamente para maria oi gatinha</p>
+        </section>
+        <section class="area message">
+            <p>(09:21:45) joao oi rapaziada</p>
+        </section>
+        <section class="area logout">
+            <p>(09:21:45) maria saiu da sala</p>
+        </section> -->
     </main>
-    <footer>
-        <input type="text" placeholder="escreva aqui...">
-        <ion-icon class="send" name="paper-plane-outline"></ion-icon>
-
+    <footer class="hidden">
+        <input  class="input-message" type="text" placeholder="escreva aqui...">
+        <ion-icon onclick="sendTo()" class="send" name="paper-plane-outline"></ion-icon>
     </footer>
+
+    <!-- api -->
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- javascript -->
     <script src="./script.js"></script>
 </body>
 </html>

@@ -1,6 +1,56 @@
 *{
     box-sizing: border-box;
 }
+
+
+/* ////////////// login //////////////*/
+.logo-login img{
+    position: absolute;
+    top: 72px;
+    right: 0;
+    left: 0;
+    margin:auto;
+    width: 130px;
+}
+.input-login input{
+    position: absolute;
+    top: 42%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    width: 261px;
+    height: 54px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+}
+.button-login button{
+    position: absolute;
+    width: 109px;
+    height: 45px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    background: #E7E7E7;
+    border-radius: 9px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    border: 1px solid #D7D7D7;
+    color: #696969;
+}
+
 /* ////////////// topo da pagina //////////////*/
 header{
     height: 80px;
@@ -23,14 +73,32 @@ header{
 .hidden{
     display: none;
 }
-
-
+/* ////////////// area das mensagens //////////////*/
+main{
+    margin-top: 90px;
+}
+.area{
+    height: 40px;
+}
+.login{
+    background: #DCDCDC;
+}
+.logout{
+    background: #DCDCDC;
+}
+.pvt{
+    background: #FFDEDE
+}
+.dark{
+    background: rgba(0, 0, 0, 0.6);
+}
 /*////////////// configurações da página //////////////*/
 aside{
     position: absolute;
+    top: 0;
     width: 70%;
     height: 100vh;
-    background-color: rgb(180, 246, 255);
+    background: red;
     right: 0;
     z-index: 1;
 }
@@ -96,9 +164,15 @@ footer{
     font-size: 26px;
     margin-right: 22px;
 }
-input{
+.input-message{
     margin-left: 22px;
-    /* border: 0px; */
     width: 85%;
     height: 80%;
+    font-family: Roboto;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    color: #000000;
+    border: 0px;
 }
