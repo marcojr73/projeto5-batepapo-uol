@@ -17,15 +17,20 @@
             <img src="./assets/logo 1.png" alt="logo-uol">
         </div>
         <div class="input-login">
-            <input type="text" placeholder="Digite o seu nome">
+            <input class="name" type="text" placeholder="Digite o seu nome">
         </div>
         <div class="button-login">
-            <button onclick="displayChat()">Entrar</button>
+            <button onclick="checkName()">Entrar</button>
+        </div>
+    </section>
+    <section>
+        <div class="loading hidden">
+            <img src="./assets/loading.gif" alt="carregando">
         </div>
     </section>
     <header class="hidden">
         <img class="logo" src="./assets/logo 1.png" alt="logo-uol">
-        <ion-icon class="profile" name="people-outline"></ion-icon>
+        <img src="./assets/Vector.png" onclick="settingsMessage()" class="profile" alt="configurações">
     </header>
     <aside class="hidden">
         <div class="side-bar-title">
@@ -33,9 +38,9 @@
             <h1>para enviar mensagem:</h1>
         </div>
         <div class="users">
-                <div class="name-users"><ion-icon class="icon-bar" name="people-outline"></ion-icon><p>todos</p></div>
-                <div class="name-users"><ion-icon class="icon-bar" name="person-circle-outline"></ion-icon><p>todos</p></div>
-                <div class="name-users"><ion-icon class="icon-bar" name="person-circle-outline"></ion-icon><p>todos</p></div>
+                <div class="name-users"><ion-icon class="icon-all" name="people-outline"></ion-icon><p>todos</p></div>
+                <!-- <div class="name-users"><ion-icon class="icon-bar" name="person-circle-outline"></ion-icon><p>todos</p></div>
+                <div class="name-users"><ion-icon class="icon-bar" name="person-circle-outline"></ion-icon><p>todos</p></div> -->
         </div>
         <div class="info-visibility">
             <p>Escolha a visibilidade</p>
@@ -45,22 +50,21 @@
             <div class="name-users"><ion-icon class="icon-bar" name="lock-closed-outline"></ion-icon><p>todos</p></div>
         </div>
     </aside>
-    <div class="middle">
+    <div class="middle" onclick="exitSettings()">
 
     </div>
     <main>
-        <!-- <section class="area login">
-            <p>(09:21:45) joao entrou na sala</p>
-        </section>
-        <section class="area pvt">
+        <ul>
+        <!-- <li class="area pvt">
             <p>(09:21:45) joao reservadamente para maria oi gatinha</p>
-        </section>
-        <section class="area message">
+        </li>
+        <li class="area message">
             <p>(09:21:45) joao oi rapaziada</p>
-        </section>
-        <section class="area logout">
+        </li>
+        <li class="area logout">
             <p>(09:21:45) maria saiu da sala</p>
-        </section> -->
+        </li> -->
+        </ul>
     </main>
     <footer class="hidden">
         <input  class="input-message" type="text" placeholder="escreva aqui...">
