@@ -62,7 +62,7 @@ function insertMessages(response){
     let i = 0;
     responseLoaded.forEach(element => {
         let type = checkType(element);
-        list.innerHTML += `<li id="${i}" class="area ${type}">
+        list.innerHTML += `<li id="${i}" class="area ${type}" data-identifier="message">
                             <p><b>
                             (${element.time}) 
                             </b>
