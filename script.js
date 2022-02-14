@@ -11,7 +11,9 @@ let sidebar = document.querySelector("aside");
 let list = document.querySelector("ul");
 let responseLoaded = null;
 let higher = null;
-let users = document.querySelector("users");
+let users = document.querySelector(".users");
+let to = null;
+let type = "message";
 
 //////////validar o nome do usuário//////////
 function checkName(){
@@ -28,7 +30,7 @@ function checkName(){
 //////////Nome não compatível//////////
 function reloadName(erro){
     let statusCode = erro.response.status;
-    alert(statusCode);
+    alert("Este nome já esta sendo usado");
 }
 
 //////////sucesso no login//////////
@@ -61,8 +63,9 @@ function insertMessages(response){
     responseLoaded.forEach(element => {
         let type = checkType(element);
         list.innerHTML += `<li id="${i}" class="area ${type}">
-                            <p>
+                            <p><b>
                             (${element.time}) 
+                            </b>
                             <strong>${element.from}</strong>  
                             ${element.text}
                             </p>
@@ -71,7 +74,6 @@ function insertMessages(response){
     });
     scrollMessages();
     setInterval(keepConection, 5000);
-    
 }
 
 //////////verifica e retorna o tipo de mensagem//////////
@@ -101,27 +103,61 @@ function keepConection(){
 function settingsMessage(){
     sidebar.classList.remove("hidden");
     middle.classList.add("dark");
+    findUsers();
 }
-
 function exitSettings(){
     sidebar.classList.add("hidden");
     middle.classList.remove("dark")
 }
 
+//////////procurar pelos usuários no servidor//////////
+function findUsers(){
+    let request = axios.get("https://mock-api.driven.com.br/api/v4/uol/participants");
+    request.then(insertUsers);
+    request.catch(deuxabu);
+}
+//////////inserir os usuários dinâmicamente//////////
+function insertUsers(arrayUsers){
+    arrayUsers.data.forEach(element =>{
+        users.innerHTML += `<div onclick = "select(this)" class="name-users"><img class="icon2" src="./assets/user.png" alt="usuário"><p>${element.name}</p></div>`
+    })
+}
+//////////escolher o usuário para enviar a mensagem//////////
+function select(element){
+    let check = document.querySelectorAll(".icon4");
+    check.forEach(element => {
+        element.classList.add("hidden");
+    })
+    element.innerHTML += "<img class='icon4' src='./assets/greenchek.png' alt='check'>";
+    to = element.innerText;
+}
+//////////escolher a privacidade da mesnsagem//////////
+function privacy(p){
+    let check = document.querySelectorAll(".icon5");
+    check.forEach(element => {
+        element.classList.add("hidden");
+    })
+    p.innerHTML += "<img class='icon5' src='./assets/greenchek.png' alt='check'>";
+    if(p.innerText == "private_message"){
+        type = "message";
+    }else{
+        type = "private_message";
+    }
+}
 //////////enviar mensagens//////////
 function sendTo(){
     let message = {
         from: `${userName}`,
-	    to: "todos",
+	    to: `${to}`,
 	    text: `${sendMessage.value}`,
-	    type: "message"
+	    type: `${type}`
     }
 
     let request = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", message);
     request.then();
     request.catch(deuxabu);
 }
-
+//////////  :/ //////////
 function deuxabu(erro){
-    alert("deu xabu");
+    window.location.reload();
 }
