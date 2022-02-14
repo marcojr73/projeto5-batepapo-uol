@@ -157,6 +157,12 @@ function sendTo(){
     request.then();
     request.catch(deuxabu);
 }
+document.addEventListener("keypress", function(e){
+    if(e.key === 'Enter'){
+        let btn = document.querySelector('#send');
+        btn.click();
+    }
+})
 //////////  :/ //////////
 function deuxabu(erro){
     window.location.reload();
