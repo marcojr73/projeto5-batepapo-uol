@@ -1,5 +1,5 @@
 
-# Parrot Cards
+# Bate Papo UOL
 
 <p align="center">
    <img width=350 src="https://bp.imguol.com/logo/logo.png"/>
